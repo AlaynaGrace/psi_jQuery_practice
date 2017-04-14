@@ -15,6 +15,7 @@ $(document).ready(function(){
 "http://i1.kym-cdn.com/photos/images/original/000/402/782/1d4.gif"];
   setInterval(function(){
     if(parseInt(counter.text()) !== 0){
+      //$('.imgDiv').empty();
       counter.text(parseInt(counter.text())-1);
     }
     else{
@@ -26,11 +27,7 @@ $(document).ready(function(){
   },1000);
 
   $('.reset').on('click',function(){
+    $('.imgDiv').empty();
     counter.text(10);
   });
-
-  if(parseInt(counter.text()) === 0){
-    var rand = Math.floor(Math.random() * imageArray.length);
-    $('.imgDiv').append("<img src='"+imageArray[rand]+"'>");
-  }
 });
